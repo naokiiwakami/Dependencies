@@ -190,6 +190,7 @@ clementine-deps: clementine-build-deps clementine-gst-plugins
 				--disable-ofa \
 				--disable-rtmp \
 				--disable-zbar
+	patch -d $(gstbad) -p0 < patches/gst-plugins-bad-01-cocoa.patch
 	cd $(gstbad) && $(make)
 	$(call installpkg,$(gstbad))
 
@@ -265,7 +266,10 @@ clementine-deps: clementine-build-deps clementine-gst-plugins
 	$(call extractandbuild,$(gmptgz),$(gmp))
 
 .done-nettle: .done-gmp
-	$(call extractandbuild,$(nettletgz),$(nettle))
+	$(call extractpkg,$(nettletgz))
+	patch -d $(nettle) -p0 < patches/nettle-01-cxxtest.patch
+	$(call buildpkg,$(nettle))
+	$(call installpkg,$(nettle))
 
 .done-gnutls: .done-gcrypt .done-libtasn1 .done-nettle
 	$(call extractpkg,$(gnutlstgz))
@@ -318,7 +322,8 @@ clementine-deps: clementine-build-deps clementine-gst-plugins
 
 .done-sparsehash:
 	$(call extractpkg,$(sparsehashtgz))
-	cd $(sparsehash) && patch -p1 < ../patches/sparsehash-01-allocator.patch
+	# patch for version 2.0.2
+	# cd $(sparsehash) && patch -p1 < ../patches/sparsehash-01-allocator.patch
 	$(call buildpkg,$(sparsehash))
 	$(call installpkg,$(sparsehash))
 
@@ -326,6 +331,7 @@ clementine-deps: clementine-build-deps clementine-gst-plugins
 	$(call extractpkg,$(qttgz))
 	patch -d $(qt) -p1 -R < patches/qt-01-mousebuttons.patch
 	patch -d $(qt) -p1 < patches/qt-02-yosemite.patch
+	patch -d $(qt) -p1 < patches/qt-03-elcapitan.patch
 	cd $(qt) && ./configure \
 		-release \
 		-opensource -confirm-license \

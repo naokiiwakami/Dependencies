@@ -1,0 +1,8 @@
+--- testsuite/cxx-test.cxx.org  2016-01-20 01:04:53.000000000 -0800
++++ testsuite/cxx-test.cxx      2016-01-20 01:05:13.000000000 -0800
+@@ -1,4 +1,5 @@
+ /* For FILE, used by gmp.h */
++#include <stddef.h>
+ #include <cstdio>
+ 
+ #include "testutils.h"

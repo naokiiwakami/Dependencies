@@ -70,7 +70,7 @@ FILES = [
     ('qjson-0.8.1.tar.gz', '4eef13da988edf8f91c260a3e1baeea9'),
     ('qt-everywhere-opensource-src-4.8.3.tar.gz', 'a663b6c875f8d7caa8ac9c30e4a4ec3b'),
     ('qt-everywhere-opensource-src-4.8.6.tar.gz', '2edbe4d6c2eff33ef91732602f3518eb'),
-    ('sparsehash-2.0.2.tar.gz', '1db92ed7f257d9b5f14a309d75e8a1d4'),
+    ('sparsehash-2.0.3.tar.gz', '4fbac902faad9247ee58ad82964d4e1c'),
     ('speex-1.2rc1.tar.gz', 'c4438b22c08e5811ff10e2b06ee9b9ae'),
     ('sqlite-amalgamation-3.7.0.tar.gz', '61b85f108760f91b79afc7833e6e6cb4'),
     ('taglib-1.10.tar.gz', '5b4441a15423b046dd92a096e09ea22c'),

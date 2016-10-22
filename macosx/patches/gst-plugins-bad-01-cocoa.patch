@@ -1,0 +1,11 @@
+--- gst-libs/gst/gl/cocoa/gstglcontext_cocoa.m.org	2016-01-20 07:13:25.000000000 -0800
++++ gst-libs/gst/gl/cocoa/gstglcontext_cocoa.m	2016-01-20 07:10:17.000000000 -0800
+@@ -88,7 +88,7 @@
+ static struct pixel_attr pixel_attrs[] = {
+   {kCGLPFAAllRenderers, "All Renderers"},
+   {kCGLPFADoubleBuffer, "Double Buffered"},
+-  {kCGLPFAStereo, "Stereo"},
++//  {kCGLPFAStereo, "Stereo"},
+   {kCGLPFAAuxBuffers, "Aux Buffers"},
+   {kCGLPFAColorSize, "Color Size"},
+   {kCGLPFAAlphaSize, "Alpha Size"},
